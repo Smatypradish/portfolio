@@ -81,7 +81,7 @@ Large-scale NLP pipeline analyzing 50,000+ Amazon reviews using **TF-IDF, GloVe,
 
 ```bash
 # Clone the repository
-git clone https://github.com/Smatypradish/REPO_NAME.git
+git clone https://github.com/Smatypradish/portfolio.git
 
 # Navigate into the folder
 cd REPO_NAME
