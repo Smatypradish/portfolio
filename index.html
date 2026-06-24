@@ -1,23 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Pradish G – M.Tech Software Engineering student at VIT Vellore. Portfolio showcasing projects in Java, Spring Boot, ML, and Data Science.">
+  <meta name="keywords" content="Pradish G, Software Engineer, Portfolio, Java, Spring Boot, Machine Learning, VIT Vellore">
+  <meta name="author" content="Pradish G">
   <title>Pradish G | Software Engineer Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 </head>
 <body>
 
-<!-- Animated Background -->
-<div class="bg-shapes">
-  <div class="shape"></div><div class="shape"></div><div class="shape"></div><div class="shape"></div>
-</div>
+<!-- Scroll Progress Bar -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Custom Cursor -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-outline" id="cursorOutline"></div>
 
 <!-- Navbar -->
 <nav class="navbar" id="navbar">
-  <a href="#hero" class="nav-logo">PG.</a>
+  <a href="#hero" class="nav-logo">PG<span class="logo-dot">.</span></a>
   <div class="nav-links" id="navLinks">
     <a href="#hero" class="active">Home</a>
     <a href="#about">About</a>
@@ -26,34 +30,70 @@
     <a href="#certifications">Certs</a>
     <a href="#contact">Contact</a>
   </div>
-  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+  <div class="nav-actions">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+      <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+    </button>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <svg class="icon-menu" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+      <svg class="icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
 </nav>
 
-<!-- HERO -->
+<!-- ==================== HERO ==================== -->
 <section id="hero">
   <div class="container">
     <div class="hero-grid">
       <div class="hero-content">
         <p class="hero-greeting">// Hello, World! I'm</p>
         <h1 class="hero-name">PRADISH G</h1>
-        <h2 class="hero-title">Software Engineer</h2>
+        <h2 class="hero-title">
+          <span class="typing-text"></span><span class="typing-cursor">|</span>
+        </h2>
         <p class="hero-desc">M.Tech Software Engineering student at VIT Vellore with a passion for building intelligent, data-driven solutions. Specializing in Backend Development, Machine Learning, and Big Data Analytics.</p>
         <div class="hero-buttons">
-          <a href="#projects" class="btn-primary">View Projects</a>
-          <a href="#contact" class="btn-outline">Contact Me</a>
+          <a href="#projects" class="btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+            View Projects
+          </a>
+          <a href="resume.pdf" target="_blank" class="btn-outline">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Download Resume
+          </a>
         </div>
         <div class="hero-socials">
           <a href="https://www.linkedin.com/in/pradish-g-356557291/" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
           </a>
           <a href="https://github.com/Smatypradish" target="_blank" rel="noopener" aria-label="GitHub">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 00-3.8 23.38c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61a3.18 3.18 0 00-1.33-1.76c-1.09-.74.08-.73.08-.73a2.52 2.52 0 011.84 1.24 2.56 2.56 0 003.5 1 2.56 2.56 0 01.76-1.6c-2.67-.3-5.47-1.33-5.47-5.93a4.64 4.64 0 011.24-3.22 4.3 4.3 0 01.12-3.18s1-.32 3.3 1.23a11.38 11.38 0 016 0c2.3-1.55 3.3-1.23 3.3-1.23a4.3 4.3 0 01.12 3.18 4.64 4.64 0 011.24 3.22c0 4.61-2.81 5.63-5.48 5.92a2.87 2.87 0 01.82 2.23v3.29c0 .32.22.7.82.58A12 12 0 0012 .3z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 00-3.8 23.38c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61a3.18 3.18 0 00-1.33-1.76c-1.09-.74.08-.73.08-.73a2.52 2.52 0 011.84 1.24 2.56 2.56 0 003.5 1 2.56 2.56 0 01.76-1.6c-2.67-.3-5.47-1.33-5.47-5.93a4.64 4.64 0 011.24-3.22 4.3 4.3 0 01.12-3.18s1-.32 3.3 1.23a11.38 11.38 0 016 0c2.3-1.55 3.3-1.23 3.3-1.23a4.3 4.3 0 01.12 3.18 4.64 4.64 0 011.24 3.22c0 4.61-2.81 5.63-5.48 5.92a2.87 2.87 0 01.82 2.23v3.29c0 .32.22.7.82.58A12 12 0 0012 .3z"/></svg>
           </a>
           <a href="mailto:smatypradish@gmail.com" aria-label="Email">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
           </a>
           <a href="tel:+919025072380" aria-label="Phone">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
           </a>
         </div>
       </div>
@@ -66,7 +106,7 @@
   </div>
 </section>
 
-<!-- ABOUT -->
+<!-- ==================== ABOUT ==================== -->
 <section id="about">
   <div class="container">
     <div class="reveal">
@@ -79,26 +119,31 @@
         <p>My expertise spans <strong>Java & Spring Boot</strong> backend development, <strong>Machine Learning</strong> and NLP, and building secure, data-driven applications. I love transforming complex datasets into actionable insights.</p>
         <p>With a filed patent in biometric encryption and hands-on experience building full-stack platforms, I bring both academic rigor and practical innovation to every project.</p>
         <div class="about-stats">
-          <div class="stat-card">
+          <div class="stat-card reveal">
             <div class="stat-number">8.02</div>
             <div class="stat-label">CGPA at VIT</div>
           </div>
-          <div class="stat-card">
+          <div class="stat-card reveal">
             <div class="stat-number">3+</div>
             <div class="stat-label">Major Projects</div>
           </div>
-          <div class="stat-card">
+          <div class="stat-card stat-highlight reveal">
+            <span class="stat-meta">PATENT</span>
             <div class="stat-number">1</div>
             <div class="stat-label">Patent Filed</div>
           </div>
-          <div class="stat-card">
+          <div class="stat-card stat-highlight reveal">
+            <span class="stat-meta">ACCURACY</span>
             <div class="stat-number">94.7%</div>
             <div class="stat-label">ML Accuracy</div>
           </div>
         </div>
       </div>
       <div class="edu-cards reveal">
-        <h3 style="font-family: var(--font-head); margin-bottom: 20px; font-size: 1.3rem;">🎓 Education</h3>
+        <h3 class="edu-heading">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c0 1.1 2.69 2 6 2s6-.9 6-2v-5"></path></svg>
+          Education
+        </h3>
         <div class="edu-card">
           <div class="edu-degree">M.Tech (Integrated) Software Engineering</div>
           <div class="edu-school">Vellore Institute of Technology, Vellore</div>
@@ -111,7 +156,7 @@
           <div class="edu-degree">Higher Secondary (Class XII)</div>
           <div class="edu-school">Vani Matriculation Higher Secondary School, Vellore</div>
           <div class="edu-meta">
-            <span>Jun 2019 – May 2021</span>
+            <span>May 2021</span>
             <span class="edu-grade">Grade: 90.0%</span>
           </div>
         </div>
@@ -120,7 +165,7 @@
   </div>
 </section>
 
-<!-- SKILLS -->
+<!-- ==================== SKILLS ==================== -->
 <section id="skills">
   <div class="container">
     <div class="reveal">
@@ -128,10 +173,12 @@
       <h2 class="section-title">My Tech Arsenal</h2>
       <p class="section-subtitle">A comprehensive toolkit spanning languages, frameworks, data science, and cloud technologies.</p>
     </div>
-    <div class="skills-categories">
-      <div class="skill-category reveal">
+    <div class="skills-bento">
+      <div class="skill-category span-6 reveal">
         <div class="skill-cat-header">
-          <div class="skill-cat-icon lang">💻</div>
+          <div class="skill-cat-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          </div>
           <div class="skill-cat-name">Languages</div>
         </div>
         <div class="skill-chips">
@@ -142,9 +189,11 @@
           <span class="skill-chip">C++</span>
         </div>
       </div>
-      <div class="skill-category reveal">
+      <div class="skill-category span-6 reveal">
         <div class="skill-cat-header">
-          <div class="skill-cat-icon core">🧠</div>
+          <div class="skill-cat-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 3.36 2.07 6.24 5 7.42V20h6v-2.58c2.93-1.18 5-4.06 5-7.42a8 8 0 0 0-8-8z"></path><line x1="9" y1="22" x2="15" y2="22"></line></svg>
+          </div>
           <div class="skill-cat-name">Core CS</div>
         </div>
         <div class="skill-chips">
@@ -155,9 +204,11 @@
           <span class="skill-chip">Computer Networks</span>
         </div>
       </div>
-      <div class="skill-category reveal">
+      <div class="skill-category span-6 reveal">
         <div class="skill-cat-header">
-          <div class="skill-cat-icon data">📊</div>
+          <div class="skill-cat-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+          </div>
           <div class="skill-cat-name">Data Science</div>
         </div>
         <div class="skill-chips">
@@ -166,9 +217,11 @@
           <span class="skill-chip">Data Analysis</span>
         </div>
       </div>
-      <div class="skill-category reveal">
+      <div class="skill-category span-6 reveal">
         <div class="skill-cat-header">
-          <div class="skill-cat-icon backend">⚙️</div>
+          <div class="skill-cat-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          </div>
           <div class="skill-cat-name">Backend</div>
         </div>
         <div class="skill-chips">
@@ -177,9 +230,11 @@
           <span class="skill-chip">Hibernate</span>
         </div>
       </div>
-      <div class="skill-category reveal">
+      <div class="skill-category span-4 reveal">
         <div class="skill-cat-header">
-          <div class="skill-cat-icon db">🗃️</div>
+          <div class="skill-cat-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+          </div>
           <div class="skill-cat-name">Database</div>
         </div>
         <div class="skill-chips">
@@ -187,9 +242,11 @@
           <span class="skill-chip">PostgreSQL</span>
         </div>
       </div>
-      <div class="skill-category reveal">
+      <div class="skill-category span-8 reveal">
         <div class="skill-cat-header">
-          <div class="skill-cat-icon tools">🔧</div>
+          <div class="skill-cat-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+          </div>
           <div class="skill-cat-name">Tools & Cloud</div>
         </div>
         <div class="skill-chips">
@@ -203,7 +260,7 @@
   </div>
 </section>
 
-<!-- PROJECTS -->
+<!-- ==================== PROJECTS ==================== -->
 <section id="projects">
   <div class="container">
     <div class="reveal">
@@ -211,30 +268,19 @@
       <h2 class="section-title">What I've Built</h2>
       <p class="section-subtitle">A collection of projects showcasing my expertise in full-stack development, ML, and data analytics.</p>
     </div>
-    <div class="projects-grid">
-      <!-- Project 1 -->
-      <div class="project-card reveal">
-        <div class="project-header">
-          <div class="project-icon p1">🏛️</div>
-          <div class="project-name">Civic Connect</div>
-          <div class="project-tagline">Citizen Feedback Analytics Platform</div>
+    <div class="projects-bento">
+      <!-- SmartMedID — featured -->
+      <div class="project-card bento-featured reveal">
+        <div class="project-image-wrapper">
+          <img src="smartmed.png" alt="SmartMedID UI" class="project-image">
         </div>
-        <div class="project-body">
-          <p class="project-desc">A full-stack civic engagement platform that empowers citizens and administrators through intelligent feedback processing.</p>
-          <ul class="project-highlights">
-            <li>Built with Spring Boot with role-based access (Admin/Citizen)</li>
-            <li>Integrated sentiment analysis API for automatic feedback classification</li>
-            <li>Designed MySQL database with real-time issue tracking system</li>
-          </ul>
-          <div class="project-tech">
-            <span>Java</span><span>Spring Boot</span><span>Spring Security</span><span>MySQL</span><span>REST APIs</span>
+        <div class="project-header">
+          <div class="project-meta-row">
+            <div class="project-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            </div>
+            <span class="meta-tag accent">PATENT</span>
           </div>
-        </div>
-      </div>
-      <!-- Project 2 -->
-      <div class="project-card reveal">
-        <div class="project-header">
-          <div class="project-icon p2">🔐</div>
           <div class="project-name">SmartMedID</div>
           <div class="project-tagline">Biometric Medical Record Security</div>
         </div>
@@ -250,10 +296,42 @@
           </div>
         </div>
       </div>
-      <!-- Project 3 -->
-      <div class="project-card reveal">
+      <!-- Civic Connect — compact -->
+      <div class="project-card bento-compact reveal">
+        <div class="project-image-wrapper">
+          <img src="civic.png" alt="Civic Connect Dashboard" class="project-image">
+        </div>
         <div class="project-header">
-          <div class="project-icon p3">📈</div>
+          <div class="project-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"></path><path d="M5 21V7l8-4v18"></path><path d="M19 21V11l-6-4"></path><path d="M9 9h1"></path><path d="M9 13h1"></path><path d="M9 17h1"></path></svg>
+          </div>
+          <div class="project-name">Civic Connect</div>
+          <div class="project-tagline">Citizen Feedback Analytics Platform</div>
+        </div>
+        <div class="project-body">
+          <p class="project-desc">A full-stack civic engagement platform that empowers citizens and administrators through intelligent feedback processing.</p>
+          <ul class="project-highlights">
+            <li>Built with Spring Boot with role-based access (Admin/Citizen)</li>
+            <li>Integrated sentiment analysis API for automatic feedback classification</li>
+            <li>Designed MySQL database with real-time issue tracking system</li>
+          </ul>
+          <div class="project-tech">
+            <span>Java</span><span>Spring Boot</span><span>Spring Security</span><span>MySQL</span><span>REST APIs</span>
+          </div>
+        </div>
+      </div>
+      <!-- Sentiment Mining — featured -->
+      <div class="project-card bento-featured reveal">
+        <div class="project-image-wrapper">
+          <img src="sentiment.png" alt="Sentiment Mining UI" class="project-image">
+        </div>
+        <div class="project-header">
+          <div class="project-meta-row">
+            <div class="project-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+            </div>
+            <span class="meta-tag accent">94.7% ACCURACY</span>
+          </div>
           <div class="project-name">Sentiment Mining</div>
           <div class="project-tagline">Big Data Analytics on Amazon Reviews</div>
         </div>
@@ -273,37 +351,55 @@
   </div>
 </section>
 
-<!-- CERTIFICATIONS -->
+<!-- ==================== CERTIFICATIONS ==================== -->
 <section id="certifications">
   <div class="container">
     <div class="reveal">
       <span class="section-label">Achievements</span>
       <h2 class="section-title">Certifications & Patent</h2>
     </div>
-    <div class="certs-grid">
-      <div class="cert-card patent reveal">
-        <div class="cert-icon">📜</div>
-        <div class="cert-title">Biometric-Bound Encryption System for EMR with Adaptive Authentication</div>
-        <div class="cert-issuer">Patent Filed – Indian Patent Office</div>
-        <div class="cert-date">March 2026</div>
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="timeline-dot accent-dot"></div>
+        <div class="timeline-card patent-card">
+          <div class="cert-header-row">
+            <div class="cert-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            </div>
+            <span class="meta-tag accent">PATENT</span>
+          </div>
+          <div class="cert-title">Biometric-Bound Encryption System for EMR with Adaptive Authentication</div>
+          <div class="cert-desc">An innovative encryption system leveraging facial recognition to secure Electronic Medical Records with adaptive authentication mechanisms.</div>
+          <div class="cert-date">March 2026</div>
+        </div>
       </div>
-      <div class="cert-card reveal">
-        <div class="cert-icon">🛡️</div>
-        <div class="cert-title">Cybersecurity Course Completion</div>
-        <div class="cert-issuer">Infosys Springboard</div>
-        <div class="cert-date">February 2026</div>
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="cert-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <div class="cert-title">Cybersecurity Course Completion</div>
+          <div class="cert-issuer">Infosys Springboard</div>
+          <div class="cert-date">February 2026</div>
+        </div>
       </div>
-      <div class="cert-card reveal">
-        <div class="cert-icon">☕</div>
-        <div class="cert-title">Java Programming Certification</div>
-        <div class="cert-issuer">InternPe</div>
-        <div class="cert-date">June 2025</div>
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="cert-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+          </div>
+          <div class="cert-title">Java Programming Certification</div>
+          <div class="cert-issuer">InternPe</div>
+          <div class="cert-date">June 2025</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
+<!-- ==================== CONTACT ==================== -->
 <section id="contact">
   <div class="container">
     <div class="reveal">
@@ -317,7 +413,7 @@
         <div class="contact-links">
           <a href="mailto:smatypradish@gmail.com" class="contact-link">
             <div class="contact-link-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
             </div>
             <div>
               <div class="contact-link-label">Email</div>
@@ -326,25 +422,25 @@
           </a>
           <a href="tel:+919025072380" class="contact-link">
             <div class="contact-link-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
             </div>
             <div>
               <div class="contact-link-label">Phone</div>
               <div class="contact-link-value">+91 9025072380</div>
             </div>
           </a>
-          <a href="https://www.linkedin.com/in/pradish-g-356557291/" target="_blank" class="contact-link">
+          <a href="https://www.linkedin.com/in/pradish-g-356557291/" target="_blank" rel="noopener" class="contact-link">
             <div class="contact-link-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
             </div>
             <div>
               <div class="contact-link-label">LinkedIn</div>
               <div class="contact-link-value">Pradish G</div>
             </div>
           </a>
-          <a href="https://github.com/Smatypradish" target="_blank" class="contact-link">
+          <a href="https://github.com/Smatypradish" target="_blank" rel="noopener" class="contact-link">
             <div class="contact-link-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)"><path d="M12 .3a12 12 0 00-3.8 23.38c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61a3.18 3.18 0 00-1.33-1.76c-1.09-.74.08-.73.08-.73a2.52 2.52 0 011.84 1.24 2.56 2.56 0 003.5 1 2.56 2.56 0 01.76-1.6c-2.67-.3-5.47-1.33-5.47-5.93a4.64 4.64 0 011.24-3.22 4.3 4.3 0 01.12-3.18s1-.32 3.3 1.23a11.38 11.38 0 016 0c2.3-1.55 3.3-1.23 3.3-1.23a4.3 4.3 0 01.12 3.18 4.64 4.64 0 011.24 3.22c0 4.61-2.81 5.63-5.48 5.92a2.87 2.87 0 01.82 2.23v3.29c0 .32.22.7.82.58A12 12 0 0012 .3z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 00-3.8 23.38c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61a3.18 3.18 0 00-1.33-1.76c-1.09-.74.08-.73.08-.73a2.52 2.52 0 011.84 1.24 2.56 2.56 0 003.5 1 2.56 2.56 0 01.76-1.6c-2.67-.3-5.47-1.33-5.47-5.93a4.64 4.64 0 011.24-3.22 4.3 4.3 0 01.12-3.18s1-.32 3.3 1.23a11.38 11.38 0 016 0c2.3-1.55 3.3-1.23 3.3-1.23a4.3 4.3 0 01.12 3.18 4.64 4.64 0 011.24 3.22c0 4.61-2.81 5.63-5.48 5.92a2.87 2.87 0 01.82 2.23v3.29c0 .32.22.7.82.58A12 12 0 0012 .3z"/></svg>
             </div>
             <div>
               <div class="contact-link-label">GitHub</div>
@@ -353,7 +449,7 @@
           </a>
           <div class="contact-link">
             <div class="contact-link-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
             </div>
             <div>
               <div class="contact-link-label">Location</div>
@@ -362,7 +458,7 @@
           </div>
         </div>
       </div>
-      <form class="contact-form reveal" id="contactForm" onsubmit="handleSubmit(event)">
+      <form class="contact-form reveal" id="contactForm">
         <div class="form-group">
           <label for="name">Your Name</label>
           <input type="text" id="name" placeholder="John Doe" required>
@@ -379,16 +475,47 @@
           <label for="message">Message</label>
           <textarea id="message" placeholder="Tell me about your project..." required></textarea>
         </div>
-        <button type="submit" class="btn-primary form-submit">Send Message ✨</button>
+        <button type="submit" class="btn-primary form-submit" id="formSubmit">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+          Send Message
+        </button>
       </form>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ==================== FOOTER ==================== -->
 <footer>
   <div class="container">
-    <p class="footer-text">© 2026 <span>Pradish G</span> — Built with passion & code ⚡</p>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="#hero" class="nav-logo">PG<span class="logo-dot">.</span></a>
+        <p class="footer-tagline">Building intelligent solutions, one line of code at a time.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/in/pradish-g-356557291/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+        </a>
+        <a href="https://github.com/Smatypradish" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 00-3.8 23.38c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61a3.18 3.18 0 00-1.33-1.76c-1.09-.74.08-.73.08-.73a2.52 2.52 0 011.84 1.24 2.56 2.56 0 003.5 1 2.56 2.56 0 01.76-1.6c-2.67-.3-5.47-1.33-5.47-5.93a4.64 4.64 0 011.24-3.22 4.3 4.3 0 01.12-3.18s1-.32 3.3 1.23a11.38 11.38 0 016 0c2.3-1.55 3.3-1.23 3.3-1.23a4.3 4.3 0 01.12 3.18 4.64 4.64 0 011.24 3.22c0 4.61-2.81 5.63-5.48 5.92a2.87 2.87 0 01.82 2.23v3.29c0 .32.22.7.82.58A12 12 0 0012 .3z"/></svg>
+        </a>
+        <a href="mailto:smatypradish@gmail.com" aria-label="Email">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-text">&copy; 2026 <span>Pradish G</span> — Crafted with precision & code</p>
+      <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+      </button>
+    </div>
   </div>
 </footer>
 
