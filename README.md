@@ -1,6 +1,6 @@
 # 👨‍💻 Pradish G — Software Engineer Portfolio
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-pradishcodes.netlify.app-brightgreen?style=for-the-badge&logo=netlify)](https://smatypradish.netlify.app/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-smatypradish.netlify.app-brightgreen?style=for-the-badge&logo=netlify)](https://smatypradish.netlify.app/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Pradish%20G-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/pradish-g-356557291/)
 [![GitHub](https://img.shields.io/badge/GitHub-Smatypradish-black?style=for-the-badge&logo=github)](https://github.com/Smatypradish)
 
@@ -19,7 +19,7 @@ Specializing in:
 
 ## 🌐 Live Site
 
-👉 **[https://pradishcodes.netlify.app/](https://smatypradish.netlify.app/)**
+👉 **[https://smatypradish.netlify.app/](https://smatypradish.netlify.app/)**
 
 ---
 
