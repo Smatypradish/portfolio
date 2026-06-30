@@ -565,7 +565,6 @@
   document.addEventListener('DOMContentLoaded', () => {
     initPageLoad();
     initTheme();
-    initCustomCursor();
     initScrollProgress();
     initNavbar();
     initTypingEffect();

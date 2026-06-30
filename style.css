@@ -50,27 +50,7 @@ body {
   position: relative;
 }
 
-/* Subtle Grid Background */
-body::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  background-image: 
-    linear-gradient(rgba(39, 39, 42, 0.15) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(39, 39, 42, 0.15) 1px, transparent 1px);
-  background-size: 24px 24px;
-  pointer-events: none;
-}
 
-[data-theme='light'] body::before {
-  background-image: 
-    linear-gradient(rgba(228, 228, 231, 0.5) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(228, 228, 231, 0.5) 1px, transparent 1px);
-}
 
 a {
   color: inherit;
@@ -115,47 +95,7 @@ img {
   transform: scaleX(0);
 }
 
-/* Custom Cursor */
-.cursor-dot {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 8px;
-  height: 8px;
-  background-color: var(--accent);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 10000;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
 
-.cursor-outline {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 40px;
-  height: 40px;
-  border: 1px solid var(--accent);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0;
-  transition: opacity 0.3s, width 0.2s, height 0.2s, background-color 0.2s;
-}
-
-body.cursor-active .cursor-dot,
-body.cursor-active .cursor-outline {
-  opacity: 1;
-}
-
-.cursor-outline.hover {
-  width: 60px;
-  height: 60px;
-  background-color: rgba(37, 99, 235, 0.1);
-}
 
 /* Keyboard Nav Focus */
 body:not(.keyboard-nav) *:focus {
@@ -336,10 +276,10 @@ section {
 }
 
 .hero-greeting {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: var(--text-muted);
-  margin-bottom: 16px;
+  margin-bottom: 12px;
+  font-weight: 500;
 }
 
 .hero-name {
